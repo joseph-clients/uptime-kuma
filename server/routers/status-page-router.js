@@ -94,6 +94,7 @@ router.get("/api/status-page/heartbeat/:slug", cache("1 minutes"), async (reques
 
             const type = 24;
             uptimeList[`${monitorID}_${type}`] = await Monitor.calcUptime(type, monitorID);
+            uptimeList[`${monitorID}_TOTAL`] = await Monitor.calcUptime(999_999_999, monitorID);            
         }
 
         response.json({

@@ -31,7 +31,7 @@ export default {
             }
 
             let key = this.monitor.id + "_" + this.type;
-
+            console.log(this.$root.uptimeList)
             if (this.$root.uptimeList[key] !== undefined) {
                 let result = Math.round(this.$root.uptimeList[key] * 10000) / 100;
                 // Only perform sanity check on status page. See louislam/uptime-kuma#2628
@@ -88,7 +88,8 @@ export default {
                 return `30${this.$t("-day")}`;
             }
 
-            return `24${this.$t("-hour")}`;
+            return "Total Uptime %"
+            //return `24${this.$t("-hour")}`;
         }
     },
 };
